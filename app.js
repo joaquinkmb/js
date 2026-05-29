@@ -1,11 +1,10 @@
 //PRIMER EJERCICIO
-
-// Parte 1
+//Parte 1
 
 const titulo = document.getElementById('titulo');
 const botonCambiar = document.getElementById('cambiar');
 const botonResetear = document.getElementById('resetear');
-const botonVerificar = document.getElementById('verificar')
+const botonVerificar = document.getElementById('verificar');
 
 botonCambiar.addEventListener("click", () => {
     titulo.textContent = "Texto cambiado";
@@ -51,8 +50,7 @@ input.addEventListener("input", () => {
 });
 
      
-
-// Parte 4
+//Parte 4
 
 let contador = 0;
 
@@ -74,12 +72,53 @@ botonRestar.addEventListener("click", () => {
 
 });
 
-
 //SEGUNDO EJERCICIO
-
 //Parte 1
 
-botonVerificar.addEventListener("click", () =>{
-    if ()
-    
-})
+const campo = document.getElementById('campo');
+const resultado = document.getElementById('resultado');
+
+botonVerificar.addEventListener("click", () => {
+    if (campo.value === "") {
+        resultado.textContent = "El campo no puede estar vacío";
+        resultado.style.color = "red";
+
+    } else if (campo.value.length < 3) {
+        resultado.textContent = "Debe tener al menos 3 caracteres";
+        resultado.style.color = "orange"; 
+
+    } else {
+        resultado.textContent = "Válido";
+        resultado.style.color = "green";      
+    }
+});
+
+//Parte 2
+
+const botonMostrar = document.getElementById('mostrar');
+const productos = document.getElementById('lista');
+
+const lista = [
+    "Notebook",
+    "Teclado",
+    "Mouse",
+    "Auriculares",
+    "Monitor",
+];
+
+botonMostrar.addEventListener("click", () => {
+    productos.innerHTML = "";
+    for (let i = 0; i < lista.length; i++) {
+        productos.innerHTML += "<li>" + lista[i] + "</li>";
+    }
+});
+
+const botonMostrarTres = document.getElementById('mostrarTres');
+const productosTres = document.getElementById('listaTres');
+
+botonMostrarTres.addEventListener("click", () => {
+    productosTres.innerHTML = "";
+    for (let i = 0; i < 3; i++) {
+        productosTres.innerHTML += "<li>" + lista[i] + "</li>";
+    }
+});
