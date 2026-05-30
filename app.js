@@ -150,4 +150,17 @@ generarSuma.addEventListener("click", () => {
     resultadoSuma.textContent = "Resultado: " + resultado;
 });
 
+//Extra
+const contar = document.getElementById('botonContar');
+const cuenta = document.getElementById('cuenta');
 
+
+contar.addEventListener("click", () => {
+   let numCuenta = 1;
+   cuenta.textContent = "";
+
+   while(numCuenta <=10){
+    cuenta.textContent += numCuenta + " ";
+    numCuenta ++;
+   }
+});
