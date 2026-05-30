@@ -6,6 +6,7 @@ const botonCambiar = document.getElementById('cambiar');
 const botonResetear = document.getElementById('resetear');
 const botonVerificar = document.getElementById('verificar');
 
+
 botonCambiar.addEventListener("click", () => {
     titulo.textContent = "Texto cambiado";
     titulo.style.color = "blue";
@@ -122,3 +123,21 @@ botonMostrarTres.addEventListener("click", () => {
         productosTres.innerHTML += "<li>" + lista[i] + "</li>";
     }
 });
+
+const numero1 = document.getElementById('numero1');
+const numero2 = document.getElementById('numero2');
+const generarSuma = document.getElementById('sumarNumeros');
+const resultadoSuma = document.getElementById('resultadoSuma');
+
+function suma(a, b) {
+    return a + b;
+}
+
+generarSuma.addEventListener("click", () => {
+    const valor1 = Number(numero1.value);
+    const valor2 = Number(numero2.value);
+    const resultado = suma(valor1, valor2);
+    
+    resultadoSuma.textContent = "Resultado: " + resultado;
+});
+
