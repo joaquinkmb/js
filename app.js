@@ -28,7 +28,6 @@ botonActivar.addEventListener("click", () => {
 
     activo = !activo;
 
-
     if (activo) {
         caja.style.backgroundColor = "lightgreen";
         botonActivar.textContent = "Desactivar";
@@ -124,20 +123,31 @@ botonMostrarTres.addEventListener("click", () => {
     }
 });
 
+//Parte 3
+
 const numero1 = document.getElementById('numero1');
 const numero2 = document.getElementById('numero2');
 const generarSuma = document.getElementById('sumarNumeros');
 const resultadoSuma = document.getElementById('resultadoSuma');
 
-function suma(a, b) {
-    return a + b;
+function suma(num1, num2) {
+    return num1 + num2;
+}
+
+function numeroValido(validacion){
+    return !isNaN(validacion) && validacion > 0;
 }
 
 generarSuma.addEventListener("click", () => {
     const valor1 = Number(numero1.value);
     const valor2 = Number(numero2.value);
+
+    if(!numeroValido(valor1) || !numeroValido(valor2)){
+        resultadoSuma.textContent = "Los valores ingresados deben de ser mayor a 0";
+        return;
+    }
     const resultado = suma(valor1, valor2);
-    
     resultadoSuma.textContent = "Resultado: " + resultado;
 });
+
 
