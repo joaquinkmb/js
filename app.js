@@ -148,6 +148,7 @@ generarSuma.addEventListener("click", () => {
     }
     const resultado = suma(valor1, valor2);
     resultadoSuma.textContent = "Resultado: " + resultado;
+    <hr></hr>
 });
 
 //Extra
